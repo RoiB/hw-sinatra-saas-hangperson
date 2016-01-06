@@ -55,7 +55,7 @@ class HangpersonGame
   end
   
   def check_win_or_lose
-    if word.split('').sort == guesses.split('').sort; return :win; end
+    if word.split('').uniq.sort == guesses.split('').sort; return :win; end
     if wrong_guesses.length == 7; return :lose; end
     :play
   end
