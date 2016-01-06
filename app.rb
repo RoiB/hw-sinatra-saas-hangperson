@@ -47,6 +47,7 @@ class HangpersonApp < Sinatra::Base
       letter = letter.downcase
       flash[:message] = "You have already used that letter." if 
         @game.guesses.include?(letter) || @game.wrong_guesses.include?(letter)
+    end
     redirect '/show'
   end
   
